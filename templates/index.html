@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>GA4 Comprehensive Analysis</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 40px auto; padding: 0 20px; }
+        h1 { font-size: 2.5em; text-align: center; color: #555; }
+        .container { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; font-weight: bold; margin-bottom: 8px; color: #666; }
+        input[type="file"] { display: block; width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; background: #f9f9f9; }
+        .btn { display: block; width: 100%; padding: 12px; border: none; border-radius: 4px; background-color: #007bff; color: white; font-size: 1em; font-weight: bold; cursor: pointer; text-align: center; }
+        .btn:hover { background-color: #0056b3; }
+        .instructions { font-size: 0.9em; color: #777; margin-top: 20px; background-color: #f9f9f9; padding: 15px; border-radius: 4px; border: 1px solid #eee;}
+        .instructions strong { color: #333; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Comprehensive YoY Analysis</h1>
+        <form method="post" action="/analyze" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="file1">Upload Older CSV Report (e.g., Year 1)</label>
+                <input type="file" name="file1" id="file1" required>
+            </div>
+            <div class="form-group">
+                <label for="file2">Upload Newer CSV Report (e.g., Year 2)</label>
+                <input type="file" name="file2" id="file2" required>
+            </div>
+            <button type="submit" class="btn">Run Comprehensive Analysis</button>
+        </form>
+        <div class="instructions">
+            <p>This tool performs up to 4 analysis steps based on the data in your files. For the most detailed analysis, export your GA4 report with the following columns:</p>
+            <ul>
+                <li><strong>Required:</strong> `Session primary channel group`, `Sessions`</li>
+                <li><strong>Optional for Step 2:</strong> `Page path and screen class`</li>
+                <li><strong>Optional for Step 3:</strong> `Date`</li>
+                <li><strong>Optional for Step 4:</strong> `Device category`</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
